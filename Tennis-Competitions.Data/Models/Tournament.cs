@@ -15,7 +15,7 @@
 
         public Surface Surface { get; set; }
 
-        public ICollection<Player> Players { get; set; } = new List<Player>();
+        public ICollection<PlayerTournament> Players { get; set; } = new List<PlayerTournament>();
 
         public ICollection<Match> Matches { get; set; } = new List<Match>();
     }
