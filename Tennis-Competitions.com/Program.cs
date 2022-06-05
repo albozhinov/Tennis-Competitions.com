@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Tennis_Competitions.Data.Context;
 using Tennis_Competitions.Data.Repository;
+using Tennis_Competitions.Services.Contracts;
+using Tennis_Competitions.Services.Providers;
+using Tennis_Competitions.Services.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,9 +21,10 @@ builder.Services
 
 // Add services to the container.
 builder.Services.AddScoped<IRepository, Repository>();
-
-
-
+builder.Services.AddScoped<IPlayerService, PlayerService>();
+builder.Services.AddScoped<IMatchService, MatchService>();
+builder.Services.AddScoped<ITournamentService, TournamentService>();
+builder.Services.AddScoped<IValidatorService, ValidatorService>();
 
 builder.Services.AddControllersWithViews();
 
