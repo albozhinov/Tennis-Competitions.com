@@ -1,0 +1,22 @@
+[
+	{
+		"Id": "918460a2-6666-4bf4-97d4-ade394b9ba2e",
+		"Name": "Roland-Garros",
+		"Surface": 0
+	},
+	{
+		"Id": "34405d3b-5831-41d8-8609-477a173f97e9",
+		"Name": "WIMBLEDON",
+		"Surface": 1
+	},
+	{
+		"Id": "57e6e345-fb55-4cc1-b5f2-f9123001ab0c",
+		"Name": "US Open",
+		"Surface": 2
+	},
+	{
+		"Id": "98de58dd-99ed-4647-95bc-cf0147c0d125",
+		"Name": "Australian Open",
+		"Surface": 2
+	}
+]
