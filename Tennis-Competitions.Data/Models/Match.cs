@@ -20,7 +20,9 @@
 
         public Round Round { get; set; }
 
-        public int MyProperty { get; set; }
+        public string FirstPlayerResult { get; set; }
+        
+        public string SecondPlayerResult { get; set; }
 
         public int AcesFirstPlayer { get; set; }
 
