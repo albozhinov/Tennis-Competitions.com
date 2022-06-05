@@ -24,6 +24,6 @@
 
         public ICollection<PlayerMatch> PlayerMatches { get; set; } = new List<PlayerMatch>();
 
-        public ICollection<Tournament> Tournaments { get; set; } = new List<Tournament>();
+        public ICollection<PlayerTournament> Tournaments { get; set; } = new List<PlayerTournament>();
     }
 }
