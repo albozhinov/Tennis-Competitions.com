@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Tennis_Competitions.Data.Context;
+using Tennis_Competitions.Data.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +11,17 @@ builder.Services.AddDbContext<TennisCompetitionsDBContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
-    .AddEntityFrameworkStores<TennisCompetitionsDBContext>();
+builder.Services
+                .AddDefaultIdentity<IdentityUser>(options => 
+                        options.SignIn.RequireConfirmedAccount = false)
+                .AddEntityFrameworkStores<TennisCompetitionsDBContext>();
+
+// Add services to the container.
+builder.Services.AddScoped<IRepository, Repository>();
+
+
+
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
