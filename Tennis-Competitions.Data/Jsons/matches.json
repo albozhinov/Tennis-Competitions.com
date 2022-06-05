@@ -7,6 +7,8 @@
 		"FirstPlayerName": "Roger Federer",
 		"SecondPlayerName": "Rafael Nadal",
 		"Round": 6,
+		"FirstPlayerResult": "6,7,3,7",
+		"SecondPlayerResult": "4,5,6,5",
 		"AcesFirstPlayer": 23,
 		"AcesSecondPlayer": 11,
 		"DoubleFoultsFirstPlayer": 5,
