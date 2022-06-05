@@ -4,8 +4,6 @@
 
     public class PlayerTournament
     {
-        public Guid Id { get; set; }
-
         public Guid PlayerId { get; set; }
 
         public Guid TournamentId { get; set; }
