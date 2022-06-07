@@ -10,10 +10,6 @@
         [Required]
         public string Name { get; set; }
 
-        public Guid TournamentId { get; set; }
-
-        public Tournament Tournament { get; set; }
-
         public Guid FirstPlayerId { get; set; }
 
         public Guid SecondPlayerId { get; set; }
@@ -45,5 +41,7 @@
         public int UnforcesErrorsSecondPlayer { get; set; }
 
         public ICollection<Player> Players { get; set; } = new List<Player>();
+
+        public ICollection<TournamentMatch> Tournaments { get; set; } = new List<TournamentMatch>();
     }
 }
