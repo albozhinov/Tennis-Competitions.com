@@ -10,6 +10,10 @@
         [Required]
         public string Name { get; set; }
 
+        public Guid TournamentId { get; set; }
+
+        public Tournament Tournament { get; set; }
+
         public Guid FirstPlayerId { get; set; }
 
         public Guid SecondPlayerId { get; set; }
