@@ -12,8 +12,8 @@ using Tennis_Competitions.Data.Context;
 namespace Tennis_Competitions.Data.Migrations
 {
     [DbContext(typeof(TennisCompetitionsDBContext))]
-    [Migration("20220607171538_AddedTournamentIdAndTournamentInMatch")]
-    partial class AddedTournamentIdAndTournamentInMatch
+    [Migration("20220607183139_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -273,9 +273,6 @@ namespace Tennis_Competitions.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("TournamentId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int>("UnforcesErrorsFirstPlayer")
                         .HasColumnType("int");
 
@@ -289,8 +286,6 @@ namespace Tennis_Competitions.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("TournamentId");
 
                     b.ToTable("Matches");
 
@@ -310,7 +305,6 @@ namespace Tennis_Competitions.Data.Migrations
                             SecondPlayerId = new Guid("1eabd820-90bc-42a8-9fc4-08bbcbbd0cf1"),
                             SecondPlayerName = "Rafael Nadal",
                             SecondPlayerResult = "4,5,6,5",
-                            TournamentId = new Guid("918460a2-6666-4bf4-97d4-ade394b9ba2e"),
                             UnforcesErrorsFirstPlayer = 35,
                             UnforcesErrorsSecondPlayer = 22,
                             WinnersFirstPlayer = 48,
@@ -331,7 +325,6 @@ namespace Tennis_Competitions.Data.Migrations
                             SecondPlayerId = new Guid("284b35af-d4cc-4fe1-8773-7f56facc508a"),
                             SecondPlayerName = "Grigor Dimitrov",
                             SecondPlayerResult = "6,4,2,2",
-                            TournamentId = new Guid("918460a2-6666-4bf4-97d4-ade394b9ba2e"),
                             UnforcesErrorsFirstPlayer = 21,
                             UnforcesErrorsSecondPlayer = 56,
                             WinnersFirstPlayer = 41,
@@ -352,7 +345,6 @@ namespace Tennis_Competitions.Data.Migrations
                             SecondPlayerId = new Guid("1eabd820-90bc-42a8-9fc4-08bbcbbd0cf1"),
                             SecondPlayerName = "Rafael Nadal",
                             SecondPlayerResult = "6,4,6,7",
-                            TournamentId = new Guid("918460a2-6666-4bf4-97d4-ade394b9ba2e"),
                             UnforcesErrorsFirstPlayer = 53,
                             UnforcesErrorsSecondPlayer = 43,
                             WinnersFirstPlayer = 48,
@@ -373,7 +365,6 @@ namespace Tennis_Competitions.Data.Migrations
                             SecondPlayerId = new Guid("284b35af-d4cc-4fe1-8773-7f56facc508a"),
                             SecondPlayerName = "Grigor Dimitrov",
                             SecondPlayerResult = "6,4,2,2",
-                            TournamentId = new Guid("98de58dd-99ed-4647-95bc-cf0147c0d125"),
                             UnforcesErrorsFirstPlayer = 21,
                             UnforcesErrorsSecondPlayer = 56,
                             WinnersFirstPlayer = 41,
@@ -394,7 +385,6 @@ namespace Tennis_Competitions.Data.Migrations
                             SecondPlayerId = new Guid("1eabd820-90bc-42a8-9fc4-08bbcbbd0cf1"),
                             SecondPlayerName = "Rafael Nadal",
                             SecondPlayerResult = "6,4,6,7",
-                            TournamentId = new Guid("57e6e345-fb55-4cc1-b5f2-f9123001ab0c"),
                             UnforcesErrorsFirstPlayer = 53,
                             UnforcesErrorsSecondPlayer = 43,
                             WinnersFirstPlayer = 48,
@@ -415,7 +405,6 @@ namespace Tennis_Competitions.Data.Migrations
                             SecondPlayerId = new Guid("284b35af-d4cc-4fe1-8773-7f56facc508a"),
                             SecondPlayerName = "Grigor Dimitrov",
                             SecondPlayerResult = "6,4,2,2",
-                            TournamentId = new Guid("57e6e345-fb55-4cc1-b5f2-f9123001ab0c"),
                             UnforcesErrorsFirstPlayer = 21,
                             UnforcesErrorsSecondPlayer = 56,
                             WinnersFirstPlayer = 41,
@@ -705,6 +694,53 @@ namespace Tennis_Competitions.Data.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Tennis_Competitions.Data.Models.TournamentMatch", b =>
+                {
+                    b.Property<Guid>("MatchId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TournamentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("MatchId", "TournamentId");
+
+                    b.HasIndex("TournamentId");
+
+                    b.ToTable("TournamentMatches");
+
+                    b.HasData(
+                        new
+                        {
+                            MatchId = new Guid("74c47f54-6175-4f57-af59-590ba981a51c"),
+                            TournamentId = new Guid("918460a2-6666-4bf4-97d4-ade394b9ba2e")
+                        },
+                        new
+                        {
+                            MatchId = new Guid("8cd31c57-99d4-4d9d-aa73-c058d2ccf963"),
+                            TournamentId = new Guid("918460a2-6666-4bf4-97d4-ade394b9ba2e")
+                        },
+                        new
+                        {
+                            MatchId = new Guid("291ff502-afde-4dd8-8d14-7cfa1681485d"),
+                            TournamentId = new Guid("918460a2-6666-4bf4-97d4-ade394b9ba2e")
+                        },
+                        new
+                        {
+                            MatchId = new Guid("1e418f5e-d2f0-42d3-9988-dbb81b958df2"),
+                            TournamentId = new Guid("98de58dd-99ed-4647-95bc-cf0147c0d125")
+                        },
+                        new
+                        {
+                            MatchId = new Guid("cf80c189-5858-4135-8962-74444603bec5"),
+                            TournamentId = new Guid("57e6e345-fb55-4cc1-b5f2-f9123001ab0c")
+                        },
+                        new
+                        {
+                            MatchId = new Guid("3403c603-0101-40d7-b4e7-3fbd88726220"),
+                            TournamentId = new Guid("57e6e345-fb55-4cc1-b5f2-f9123001ab0c")
+                        });
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -756,17 +792,6 @@ namespace Tennis_Competitions.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Tennis_Competitions.Data.Models.Match", b =>
-                {
-                    b.HasOne("Tennis_Competitions.Data.Models.Tournament", "Tournament")
-                        .WithMany("Matches")
-                        .HasForeignKey("TournamentId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Tournament");
-                });
-
             modelBuilder.Entity("Tennis_Competitions.Data.Models.Player", b =>
                 {
                     b.HasOne("Tennis_Competitions.Data.Models.Match", null)
@@ -812,9 +837,30 @@ namespace Tennis_Competitions.Data.Migrations
                     b.Navigation("Tournament");
                 });
 
+            modelBuilder.Entity("Tennis_Competitions.Data.Models.TournamentMatch", b =>
+                {
+                    b.HasOne("Tennis_Competitions.Data.Models.Match", "Match")
+                        .WithMany("Tournaments")
+                        .HasForeignKey("MatchId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Tennis_Competitions.Data.Models.Tournament", "Tournament")
+                        .WithMany("Matches")
+                        .HasForeignKey("TournamentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Match");
+
+                    b.Navigation("Tournament");
+                });
+
             modelBuilder.Entity("Tennis_Competitions.Data.Models.Match", b =>
                 {
                     b.Navigation("Players");
+
+                    b.Navigation("Tournaments");
                 });
 
             modelBuilder.Entity("Tennis_Competitions.Data.Models.Player", b =>
