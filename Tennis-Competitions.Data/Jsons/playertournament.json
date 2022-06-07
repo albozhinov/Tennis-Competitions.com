@@ -7,4 +7,52 @@
 		"PlayerId": "1eabd820-90bc-42a8-9fc4-08bbcbbd0cf1",
 		"TournamentId": "34405d3b-5831-41d8-8609-477a173f97e9"
 	},
+	{
+		"PlayerId": "284b35af-d4cc-4fe1-8773-7f56facc508a",
+		"TournamentId": "34405d3b-5831-41d8-8609-477a173f97e9"
+	},
+	{
+		"PlayerId": "875e07ad-5274-4f96-91c5-bbc41fd41804",
+		"TournamentId": "34405d3b-5831-41d8-8609-477a173f97e9"
+	},
+	{
+		"PlayerId": "1eabd820-90bc-42a8-9fc4-08bbcbbd0cf1",
+		"TournamentId": "918460a2-6666-4bf4-97d4-ade394b9ba2e"
+	},
+	{
+		"PlayerId": "284b35af-d4cc-4fe1-8773-7f56facc508a",
+		"TournamentId": "918460a2-6666-4bf4-97d4-ade394b9ba2e"
+	},
+	{
+		"PlayerId": "875e07ad-5274-4f96-91c5-bbc41fd41804",
+		"TournamentId": "918460a2-6666-4bf4-97d4-ade394b9ba2e"
+	},
+	{
+		"PlayerId": "076bee1c-3b59-4fe4-8a14-6ce21ca55b53",
+		"TournamentId": "918460a2-6666-4bf4-97d4-ade394b9ba2e"
+	},
+	{
+		"PlayerId": "1eabd820-90bc-42a8-9fc4-08bbcbbd0cf1",
+		"TournamentId": "57e6e345-fb55-4cc1-b5f2-f9123001ab0c"
+	},
+	{
+		"PlayerId": "284b35af-d4cc-4fe1-8773-7f56facc508a",
+		"TournamentId": "57e6e345-fb55-4cc1-b5f2-f9123001ab0c"
+	},
+	{
+		"PlayerId": "875e07ad-5274-4f96-91c5-bbc41fd41804",
+		"TournamentId": "57e6e345-fb55-4cc1-b5f2-f9123001ab0c"
+	},
+	{
+		"PlayerId": "076bee1c-3b59-4fe4-8a14-6ce21ca55b53",
+		"TournamentId": "98de58dd-99ed-4647-95bc-cf0147c0d125"
+	},
+	{
+		"PlayerId": "1eabd820-90bc-42a8-9fc4-08bbcbbd0cf1",
+		"TournamentId": "98de58dd-99ed-4647-95bc-cf0147c0d125"
+	},
+	{
+		"PlayerId": "284b35af-d4cc-4fe1-8773-7f56facc508a",
+		"TournamentId": "98de58dd-99ed-4647-95bc-cf0147c0d125"
+	}
 ]
