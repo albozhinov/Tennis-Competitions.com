@@ -27,7 +27,11 @@
             this.WinnersSecondPlayer = match.WinnersSecondPlayer;
             this.UnforcesErrorsFirstPlayer = match.UnforcesErrorsFirstPlayer;
             this.UnforcesErrorsSecondPlayer = match.UnforcesErrorsSecondPlayer;
-            this.Players = match.Players;
+
+            if(match.Players is not null)
+            this.Players = match.Players
+                                        .Select(p => new PlayerServiceModel(p.Player))
+                                        .ToList();
         }
 
         public Guid Id { get; init; }
@@ -60,6 +64,6 @@
 
         public int UnforcesErrorsSecondPlayer { get; set; }
 
-        public ICollection<Player> Players { get; set; } = new List<Player>();
+        public ICollection<PlayerServiceModel> Players { get; set; }
     }
 }

@@ -15,10 +15,18 @@ namespace Tennis_Competitions.Services.Models
             this.Id = tournament.Id;
             this.Name = tournament.Name;
             this.Surface = tournament.Surface;
-            this.Players = tournament.Players;
-            this.Matches = tournament.Matches;
-        }
 
+            if (tournament.Players is not null)
+            this.Players = tournament.Players
+                                        .Select(p => new PlayerServiceModel(p.Player))
+                                        .ToList();
+
+            if (tournament.Matches is not null)
+                this.Matches = tournament.Matches
+                                        .Select(m => new MatchServiceModel(m.Match))
+                                        .ToList();
+
+        }
 
         public Guid Id { get; init; }
 
@@ -26,8 +34,8 @@ namespace Tennis_Competitions.Services.Models
 
         public Surface Surface { get; set; }
 
-        public ICollection<PlayerTournament> Players { get; set; } = new List<PlayerTournament>();
+        public ICollection<PlayerServiceModel> Players { get; set; } 
 
-        public ICollection<TournamentMatch> Matches { get; set; } = new List<TournamentMatch>();
+        public ICollection<MatchServiceModel> Matches { get; set; }
     }
 }
