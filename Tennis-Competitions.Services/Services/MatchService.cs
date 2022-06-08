@@ -1,6 +1,8 @@
 ﻿namespace Tennis_Competitions.Services.Services
 {
+    using Microsoft.EntityFrameworkCore;
     using System.Threading.Tasks;
+    using Tennis_Competitions.Data.Models;
     using Tennis_Competitions.Data.Repository;
     using Tennis_Competitions.Services.Contracts;
     using Tennis_Competitions.Services.Models;
@@ -17,9 +19,23 @@
             this.validator = _validatorService;
         }
 
-        public Task<MatchServiceModel> GetMatchById(string id)
+        public async Task<MatchServiceModel> GetMatchById(string id)
         {
-            throw new NotImplementedException();
+            validator.NullOrWhiteSpacesCheck(id);
+
+            var isValidId = validator.TryParseGuid(id);
+
+            if (!isValidId.Item1)
+                throw new ArgumentException("Incorrect ID.");
+
+
+            var match = await repository.All<Match>()
+                                               .FirstOrDefaultAsync(m => m.Id == isValidId.Item2);
+
+            if (match == null)
+                throw new ArgumentException("Match cannot be found.");
+
+            return new MatchServiceModel(match);
         }
     }
 }

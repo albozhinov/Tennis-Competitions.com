@@ -26,11 +26,14 @@
             (bool, Guid) isGuid = validator.TryParseGuid(id);
 
             if (!isGuid.Item1)
-                throw new ArgumentException("Tournament cannot found.");
+                throw new ArgumentException("Incorrect ID.");
 
 
             var tournament = await repository.All<Tournament>()
                                                 .FirstOrDefaultAsync(t => t.Id == isGuid.Item2);
+
+            if (tournament == null)
+                throw new ArgumentException("Tournament cannot be found.");
 
             return new TournamentServiceModel(tournament);
         }
@@ -42,12 +45,15 @@
             (bool, Guid) isGuid = validator.TryParseGuid(tourId);
 
             if (!isGuid.Item1)
-                throw new ArgumentException("Tournament cannot found.");
+                throw new ArgumentException("Incorrect ID.");
 
             var tournament = await repository.All<Tournament>()
                                              .Include(t => t.Players)
                                                 .ThenInclude(p => p.Player)
                                              .FirstOrDefaultAsync(t => t.Id == isGuid.Item2);
+
+            if (tournament == null)
+                throw new ArgumentException("Tournament cannot be found.");
 
             return new TournamentServiceModel(tournament);
         }
@@ -56,14 +62,17 @@
         {
             validator.NullOrWhiteSpacesCheck(tourId);
 
-            (bool, Guid) isGuid = validator.TryParseGuid(tourId);
+            (bool, Guid) isValidId = validator.TryParseGuid(tourId);
 
-            if (!isGuid.Item1)
-                throw new ArgumentException("Tournament cannot found.");
+            if (!isValidId.Item1)
+                throw new ArgumentException("Incorrect ID.");
 
             var tournament = await repository.All<Tournament>()
                                              .Include(t => t.Matches)
-                                             .FirstOrDefaultAsync(t => t.Id == isGuid.Item2);
+                                             .FirstOrDefaultAsync(t => t.Id == isValidId.Item2);
+
+            if (tournament == null)
+                throw new ArgumentException("Tournament cannot be found.");
 
             return new TournamentServiceModel(tournament);
         }
