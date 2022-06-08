@@ -6,5 +6,9 @@
     public interface IPlayerService
     {
         Task<PlayerServiceModel> GetPlayerById(string id);
+
+        Task<PlayerServiceModel> GetPlayerMatches(string id);
+
+        Task<PlayerServiceModel> GetPlayerTournaments(string id);
     }
 }
