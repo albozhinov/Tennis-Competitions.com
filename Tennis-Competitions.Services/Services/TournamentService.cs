@@ -22,7 +22,7 @@
         public async Task<TournamentServiceModel> GetTournamentById(string id)
         {
             validator.NullOrWhiteSpacesCheck(id);
-            
+
             (bool, Guid) isGuid = validator.TryParseGuid(id);
 
             if (!isGuid.Item1)
@@ -75,6 +75,16 @@
                 throw new ArgumentException("Tournament cannot be found.");
 
             return new TournamentServiceModel(tournament);
+        }
+
+        public async Task<ICollection<TournamentServiceModel>> GetAllTournaments()
+        {
+            var tours = await repository.All<Tournament>()
+                                                .ToListAsync();
+
+            var tournaments = tours.Select(t => new TournamentServiceModel(t)).ToList();
+
+            return tournaments;
         }
     }
 }

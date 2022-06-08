@@ -5,6 +5,8 @@
 
     public interface ITournamentService
     {
+        Task<ICollection<TournamentServiceModel>> GetAllTournaments();
+
         Task<TournamentServiceModel> GetTournamentById(string id);
 
         Task<TournamentServiceModel> GetAllPlayersInTournament(string tourId);

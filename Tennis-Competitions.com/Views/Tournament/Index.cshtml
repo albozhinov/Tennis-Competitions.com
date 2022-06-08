@@ -1,0 +1,9 @@
+﻿@model ICollection<TournamentServiceModel>
+
+<h1>Tournaments</h1>
+@{
+    foreach (var tour in Model)
+    {
+        <partial name="_TournametPartial" model="@tour" />
+    }
+}

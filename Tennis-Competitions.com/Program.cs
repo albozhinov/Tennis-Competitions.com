@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Tennis_Competitions.Data.Context;
 using Tennis_Competitions.Data.Repository;
@@ -15,7 +16,7 @@ builder.Services.AddDbContext<TennisCompetitionsDBContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services
-                .AddDefaultIdentity<IdentityUser>(options => 
+                .AddDefaultIdentity<IdentityUser>(options =>
                         options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<TennisCompetitionsDBContext>();
 
@@ -26,7 +27,12 @@ builder.Services.AddScoped<IMatchService, MatchService>();
 builder.Services.AddScoped<ITournamentService, TournamentService>();
 builder.Services.AddScoped<IValidatorService, ValidatorService>();
 
-builder.Services.AddControllersWithViews();
+// Global Automatically validate antiforgery tokens for unsafe HTTP methods only
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+})
+                .AddRazorRuntimeCompilation();
 
 var app = builder.Build();
 
