@@ -14,7 +14,7 @@ namespace Tennis_Competitions.com.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var tours = tournamentService.GetAllTournaments();
+            var tours = await tournamentService.GetAllTournaments();
 
             return View(tours);
         }

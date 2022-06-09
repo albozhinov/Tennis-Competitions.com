@@ -80,6 +80,12 @@
         public async Task<ICollection<TournamentServiceModel>> GetAllTournaments()
         {
             var tours = await repository.All<Tournament>()
+                                                .Select(t => new Tournament()
+                                                {
+                                                    Id = t.Id,
+                                                    Name = t.Name,
+                                                    Surface = t.Surface,
+                                                })
                                                 .ToListAsync();
 
             var tournaments = tours.Select(t => new TournamentServiceModel(t)).ToList();
