@@ -1,10 +1,10 @@
 ﻿@model TournamentServiceModel
 
 <div class="card" style="width: 18rem;">
-  <img src="https://images.prismic.io/fft-rg-site%2F95765448-c7fa-428b-b565-8368dba90b17_logo.svg?auto=compress,format" class="card-img-top" alt="...">
+  <img src="@Model.ImageURL" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">@Model.Name</h5>
     <p class="card-text">@Model.Surface.ToString()</p>
-    <a asp-area="" asp-controller="Tournament" asp-action="Details" class="btn btn-primary">Details</a>
+    <a asp-area="" asp-controller="Tournament" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-primary">Details</a>
   </div>
 </div>
