@@ -2,21 +2,25 @@
 	{
 		"Id": "918460a2-6666-4bf4-97d4-ade394b9ba2e",
 		"Name": "Roland-Garros",
-		"Surface": 0
+		"Surface": 0,
+		"ImageURL": "https://images.prismic.io/fft-rg-site%2F95765448-c7fa-428b-b565-8368dba90b17_logo.svg?auto=compress,format"
 	},
 	{
 		"Id": "34405d3b-5831-41d8-8609-477a173f97e9",
 		"Name": "WIMBLEDON",
-		"Surface": 1
+		"Surface": 1,
+		"ImageURL": "https://i.pinimg.com/originals/6f/82/76/6f8276a2cf7af9be2ad0c875bdacb944.png"
 	},
 	{
 		"Id": "57e6e345-fb55-4cc1-b5f2-f9123001ab0c",
 		"Name": "US Open",
-		"Surface": 2
+		"Surface": 2,
+		"ImageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Usopen-header-logo.svg/2560px-Usopen-header-logo.svg.png"
 	},
 	{
 		"Id": "98de58dd-99ed-4647-95bc-cf0147c0d125",
 		"Name": "Australian Open",
-		"Surface": 2
+		"Surface": 2,
+		"ImageURL": "https://ausopen.com/sites/default/files/styles/medium/public/ao_blue_1.png?itok=Yw-P35xE"
 	}
 ]
