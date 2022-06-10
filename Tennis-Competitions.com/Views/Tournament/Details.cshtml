@@ -1,0 +1,9 @@
+﻿@model TournamentServiceModel
+
+<h2>@Model.Name</h2>
+@{
+    foreach (var match in Model.Matches)
+    {
+        <partial name="_MatchPartial" model="@match" />
+    }
+}
