@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tennis_Competitions.Data.Context;
 
@@ -11,9 +12,10 @@ using Tennis_Competitions.Data.Context;
 namespace Tennis_Competitions.Data.Migrations
 {
     [DbContext(typeof(TennisCompetitionsDBContext))]
-    partial class TennisCompetitionsDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220610145522_FixedJSONBug")]
+    partial class FixedJSONBug
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

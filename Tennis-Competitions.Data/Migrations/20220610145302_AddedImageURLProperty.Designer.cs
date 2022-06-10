@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tennis_Competitions.Data.Context;
 
@@ -11,9 +12,10 @@ using Tennis_Competitions.Data.Context;
 namespace Tennis_Competitions.Data.Migrations
 {
     [DbContext(typeof(TennisCompetitionsDBContext))]
-    partial class TennisCompetitionsDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220610145302_AddedImageURLProperty")]
+    partial class AddedImageURLProperty
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -451,7 +453,7 @@ namespace Tennis_Competitions.Data.Migrations
                             ImageURL = "https://s.yimg.com/ny/api/res/1.2/inF.TxHhIpvjBALH3M4UxQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM2MA--/https://s.yimg.com/os/creatr-uploaded-images/2022-05/fc07afd0-d986-11ec-add5-98233a9a2ecd",
                             LastName = "Federer",
                             Loses = 275,
-                            TournamentsWins = 103,
+                            TournamentsWins = 0,
                             Wins = 1251
                         },
                         new
@@ -461,7 +463,7 @@ namespace Tennis_Competitions.Data.Migrations
                             ImageURL = "https://www.atptour.com/-/media/alias/player-headshot/D643",
                             LastName = "Djokovic",
                             Loses = 203,
-                            TournamentsWins = 87,
+                            TournamentsWins = 0,
                             Wins = 1001
                         },
                         new
@@ -471,7 +473,7 @@ namespace Tennis_Competitions.Data.Migrations
                             ImageURL = "https://www.atptour.com/-/media/tennis/players/gladiator/2022/nadal-full-2022-may.png",
                             LastName = "Nadal",
                             Loses = 212,
-                            TournamentsWins = 91,
+                            TournamentsWins = 0,
                             Wins = 1051
                         },
                         new
@@ -481,7 +483,7 @@ namespace Tennis_Competitions.Data.Migrations
                             ImageURL = "https://content.topcourt.com/uploads/player-images/thumb/20210324202739875800ZBMHF.jpg",
                             LastName = "Dimitrov",
                             Loses = 240,
-                            TournamentsWins = 8,
+                            TournamentsWins = 0,
                             Wins = 361
                         });
                 });
