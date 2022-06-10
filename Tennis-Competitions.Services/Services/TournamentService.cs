@@ -30,6 +30,8 @@
 
 
             var tournament = await repository.All<Tournament>()
+                                                .Include(t => t.Matches)
+                                                    .ThenInclude(m => m.Match)
                                                 .FirstOrDefaultAsync(t => t.Id == isGuid.Item2);
 
             if (tournament == null)
@@ -85,6 +87,7 @@
                                                     Id = t.Id,
                                                     Name = t.Name,
                                                     Surface = t.Surface,
+                                                    ImageURL = t.ImageURL,
                                                 })
                                                 .ToListAsync();
 
