@@ -18,5 +18,13 @@ namespace Tennis_Competitions.com.Controllers
 
             return View(tours);
         }
+
+        public async Task<IActionResult> Details(string id)
+        {
+            var tour = await tournamentService.GetTournamentById(id);
+
+
+            return View(tour);
+        }
     }
 }
