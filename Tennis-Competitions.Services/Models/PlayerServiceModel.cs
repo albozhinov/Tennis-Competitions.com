@@ -17,6 +17,7 @@ namespace Tennis_Competitions.Services.Models
             this.Wins = player.Wins;
             this.Loses = player.Loses;
             this.TournamentsWins = player.TournamentsWins;
+            this.ImageURL = player.ImageURL;
 
             if(player.PlayerMatches is not null)
             this.Matches = player.PlayerMatches
@@ -40,6 +41,8 @@ namespace Tennis_Competitions.Services.Models
         public int Loses { get; set; }
 
         public int TournamentsWins { get; set; }
+
+        public string ImageURL { get; set; }
 
         public ICollection<MatchServiceModel> Matches { get; set; }
 

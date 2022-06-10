@@ -15,6 +15,7 @@ namespace Tennis_Competitions.Services.Models
             this.Id = tournament.Id;
             this.Name = tournament.Name;
             this.Surface = tournament.Surface;
+            this.ImageURL = tournament.ImageURL;
 
             if (tournament.Players is not null)
             this.Players = tournament.Players
@@ -33,6 +34,8 @@ namespace Tennis_Competitions.Services.Models
         public string Name { get; set; }
 
         public Surface Surface { get; set; }
+
+        public string ImageURL { get; set; }
 
         public ICollection<PlayerServiceModel> Players { get; set; } 
 
