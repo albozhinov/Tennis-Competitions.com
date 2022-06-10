@@ -15,6 +15,8 @@
 
         public Surface Surface { get; set; }
 
+        public string ImageURL { get; set; }
+
         public ICollection<PlayerTournament> Players { get; set; } = new List<PlayerTournament>();
 
         public ICollection<TournamentMatch> Matches { get; set; } = new List<TournamentMatch>();

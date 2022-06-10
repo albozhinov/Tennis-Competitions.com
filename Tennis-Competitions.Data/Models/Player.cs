@@ -22,6 +22,8 @@
 
         public int TournamentsWins { get; set; }
 
+        public string ImageURL { get; set; }
+
         public ICollection<PlayerMatch> PlayerMatches { get; set; } = new List<PlayerMatch>();
 
         public ICollection<PlayerTournament> Tournaments { get; set; } = new List<PlayerTournament>();
