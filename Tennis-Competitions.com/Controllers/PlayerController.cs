@@ -18,5 +18,20 @@
 
             return View(players);
         }
+
+        public async Task<IActionResult> Details(string id)
+        {
+            try
+            {
+                var player = await playerService.GetPlayerById(id);
+
+                return View(player);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+        }
     }
 }
