@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Tennis_Competitions.Services.Contracts;
-
-namespace Tennis_Competitions.com.Controllers
+﻿namespace Tennis_Competitions.com.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+    using Tennis_Competitions.Services.Contracts;
+
     public class TournamentController : Controller
     {
         private readonly ITournamentService tournamentService;
@@ -21,10 +21,16 @@ namespace Tennis_Competitions.com.Controllers
 
         public async Task<IActionResult> Details(string id)
         {
-            var tour = await tournamentService.GetTournamentById(id);
+            try
+            {
+                var tour = await tournamentService.GetTournamentById(id);
 
-
-            return View(tour);
+                return View(tour);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
     }
 }
