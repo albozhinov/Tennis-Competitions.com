@@ -1,9 +1,15 @@
 ﻿@model IEnumerable<TournamentServiceModel>
 
 <h1>Tournaments</h1>
-@{
-    foreach (var tour in Model)
-    {
-        <partial name="_TournamentPartial" model="@tour" />
+<br />
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    @{
+        foreach (var tour in Model)
+        {
+            <div class="col">
+                <partial name="_TournamentPartial" model="@tour" />
+            </div>
+        }
     }
-}
+</div>
