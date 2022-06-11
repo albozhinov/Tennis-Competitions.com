@@ -42,13 +42,24 @@
                 throw new ArgumentException("Incorrect ID.");
 
             var player = await repository.All<Player>()
+                                            .Select(p => new PlayerServiceModel()
+                                            {
+                                                Id = p.Id,
+                                                FirstName = p.FirstName,
+                                                LastName= p.LastName,
+                                                ImageURL= p.ImageURL,
+                                                Wins = p.Wins,
+                                                Loses = p.Loses,
+                                                TournamentsWins = p.TournamentsWins,
+                                                MatchesCount = p.PlayerMatches.Count(),
+                                                TournamentsCount = p.Tournaments.Count(),
+                                            })
                                             .FirstOrDefaultAsync(p => p.Id == isValidId.Item2);
 
             if (player is null)
                 throw new ArgumentException("Player cannot found.");
 
-
-            return new PlayerServiceModel(player);
+            return player;
         }
 
         public async Task<PlayerServiceModel> GetPlayerMatches(string id)
