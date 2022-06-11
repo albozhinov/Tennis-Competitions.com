@@ -4,6 +4,7 @@
   <div class="card-body">
     <h5 class="card-title">@Model.Name</h5>
     <p class="card-text">@Model.FirstPlayerName vs @Model.SecondPlayerName</p>
+    <br />
     <a asp-area="" asp-controller="Match" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-primary">Open</a>
   </div>
 </div>

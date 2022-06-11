@@ -1,10 +1,11 @@
 ﻿@model TournamentServiceModel
 
-<div class="card" style="width: 18rem;">
-  <img src="@Model.ImageURL" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">@Model.Name</h5>
-    <p class="card-text">@Model.Surface.ToString()</p>
-    <a asp-area="" asp-controller="Tournament" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-primary">Details</a>
-  </div>
+<div class="card" id="tournament-card">
+    <img src="@Model.ImageURL" class="tournamentImage" alt="@Model.Name">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">Surface: @Model.Surface.ToString()</p>
+        <hr />
+        <a asp-area="" asp-controller="Tournament" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-primary">Details</a>
+    </div>
 </div>
