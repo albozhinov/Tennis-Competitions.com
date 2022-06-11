@@ -1,0 +1,40 @@
+﻿@model PlayerServiceModel
+
+<div class="mb-3" id="playerAvatar">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="@Model.ImageURL" class="img-fluid rounded-start" id="playerPhoto" alt="@Model.LastName">
+        </div>
+        <div class="col-md-8">
+            <div class="container">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.FirstName @Model.LastName</h5>
+                    <div class="row">
+                        <table class="table-player-profile table-player-profile3">
+                            <tr>
+                                <td class="table-player-profile1 table-player-profile3 table-player-border">Wins &nbsp<p id="largetext">@Model.Wins</p></td>
+                                <td class="table-player-profile1 table-player-profile4 table-player-border textRight">Lost &nbsp<p id="largetext">@Model.Loses</p></td>
+                            </tr>
+                            <tr>
+                                <td class="table-player-profile2 table-player-profile3 table-player-border">Titles &nbsp<p id="largetext">@Model.TournamentsWins</p> </td>
+                                <td class="table-player-profile2 table-player-profile4 table-player-border"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            Matches &nbsp<p id="largetext">@Model.MatchesCount</p>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            Tournaments &nbsp<p id="largetext">@Model.TournamentsCount</p>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
