@@ -44,6 +44,10 @@ namespace Tennis_Competitions.Services.Models
 
         public string ImageURL { get; set; }
 
+        public int MatchesCount { get; set; }
+
+        public int TournamentsCount { get; set; }
+
         public ICollection<MatchServiceModel> Matches { get; set; }
 
         public ICollection<TournamentServiceModel> Tournaments { get; set; }
