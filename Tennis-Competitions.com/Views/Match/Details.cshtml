@@ -1,0 +1,38 @@
+﻿@model MatchServiceModel
+
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="3" class="textCenter">
+                @Model.Name
+            </th>
+        </tr>
+        <tr>
+            <th><a asp-area="" asp-controller="Player" asp-action="Details" asp-route-id="@Model.FirstPlayerId" class="playerName">@Model.FirstPlayerName</a></th>
+            <th class="textCenter">Players</th>
+            <th class="textRight"><a asp-area="" asp-controller="Player" asp-action="Details" asp-route-id="@Model.SecondPlayerId" class="playerName" >@Model.SecondPlayerName</a></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.AcesFirstPlayer</td>
+            <th class="textCenter">ACES</th>
+            <td class="textRight">@Model.AcesSecondPlayer</td>
+        </tr>
+        <tr>
+            <td>@Model.DoubleFoultsFirstPlayer</td>
+            <th class="textCenter">DOUBLE FOULTS</th>
+            <td class="textRight">@Model.DoubleFoultsSecondPlayer</td>
+        </tr>
+        <tr>
+            <td>@Model.WinnersFirstPlayer</td>
+            <th class="textCenter">WINNERS</th>
+            <td class="textRight">@Model.WinnersSecondPlayer</td>
+        </tr>
+        <tr>
+            <td>@Model.UnforcesErrorsFirstPlayer</td>
+            <th class="textCenter">UNFORCES ERRORS</th>
+            <td class="textRight">@Model.UnforcesErrorsSecondPlayer</td>
+        </tr>
+    </tbody>
+</table>
