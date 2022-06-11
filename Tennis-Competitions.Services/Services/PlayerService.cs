@@ -19,6 +19,19 @@
             this.validator = _validator;
         }
 
+        public async Task<ICollection<PlayerServiceModel>> GetAllPlayers()
+        {
+            return await repository.All<Player>()
+                                            .Select(p => new PlayerServiceModel()
+                                            {
+                                                Id = p.Id,
+                                                FirstName = p.FirstName,
+                                                LastName = p.LastName,
+                                                ImageURL = p.ImageURL
+                                            })
+                                            .ToListAsync();
+        }
+
         public async Task<PlayerServiceModel> GetPlayerById(string id)
         {
             validator.NullOrWhiteSpacesCheck(id);
@@ -40,7 +53,6 @@
 
         public async Task<PlayerServiceModel> GetPlayerMatches(string id)
         {
-
             validator.NullOrWhiteSpacesCheck(id);
 
             var isValidId = validator.TryParseGuid(id);
