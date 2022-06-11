@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using Tennis_Competitions.com.Models;
-
-namespace Tennis_Competitions.com.Controllers
+﻿namespace Tennis_Competitions.com.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+    using System.Diagnostics;
+    using Tennis_Competitions.com.Models;
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
