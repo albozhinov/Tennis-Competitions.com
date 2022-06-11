@@ -17,10 +17,13 @@ body {
     margin-bottom: 60px;
 }
 
-img {
+.tournamentImage {
+    align-content: center;
     display: block;
-    max-width: 100%;
-    height: auto;
+    max-width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .textCenter {
@@ -34,4 +37,178 @@ img {
 .playerName {
     text-decoration: none;
     color: black
+}
+
+.card {
+    width: 18rem
+}
+
+.playerProfileBody {
+    display: block;
+    font-family: Helvetica;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+#wrapper {
+    width: 250px;
+    height: 385px;
+    border: 2px solid white;
+    text-align: center;
+    background-color: #E6E6E6;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+#tournament-card {
+    width: 280px;
+    height: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+    margin: 0 auto;
+}
+
+#avatar {
+    padding-top: 10px;
+    margin: 0 auto;
+}
+
+.playerImage {
+    width: 200px;
+    height: 200px;
+    border: 2px solid white;
+    border-radius: 200px
+}
+
+#main-info {
+    line-height: 12px;
+}
+
+h2 {
+    color: grey;
+    font-size: 18px
+}
+
+#label {
+    display: inline-block;
+    color: white;
+    border: 1px solid #6CC644;
+    background-color: #6CC644;
+    border-width: 3px;
+    border-radius: 3px;
+    font-size: 12px
+}
+
+a {
+    color: #60B1DD;
+    text-decoration: none;
+    font-size: 14px
+}
+
+#details {
+    font-size: 14px;
+    line-height: 1px
+}
+
+.octicon {
+    color: #9A9999;
+}
+
+p {
+    display: inline-block;
+}
+
+#git-info {
+    word-spacing: 20px;
+}
+
+    #git-info > .followers, .starred, .following {
+        display: inline-block
+    }
+
+        #git-info > .followers > .digits {
+            color: #4078C0;
+            font-size: 25px;
+            font-weight: bold
+        }
+
+        #git-info > .followers > .text {
+            color: #A19078;
+            font-size: 10px;
+            vertical-align: text-top
+        }
+
+    #git-info > .starred > .digits {
+        color: #4078C0;
+        font-size: 25px;
+        font-weight: bold
+    }
+
+    #git-info > .starred > .text {
+        color: #A19078;
+        font-size: 10px;
+        vertical-align: text-top
+    }
+
+    #git-info > .following > .digits {
+        color: #4078C0;
+        font-size: 25px;
+        font-weight: bold
+    }
+
+    #git-info > .following > .text {
+        color: #A19078;
+        font-size: 10px;
+        vertical-align: text-top
+    }
+
+hr {
+    vertical-align: bottom;
+    border: 5px solid #EEEEEE;
+    width: 100%
+}
+
+#playerAvatar {
+    border: 1px solid #9A9999;
+    border-width: 1px;
+    border-radius: 10px;
+}
+
+#playerPhoto {
+    width: 500px;
+    height: 500px;
+}
+
+.table-player-profile {
+    border-collapse: collapse;
+}
+
+.table-player-border {
+    border: 1px solid black;
+}
+
+.table-player-profile1 {
+    border-top: 0;
+}
+
+.table-player-profile2 {
+    border-bottom: 0;
+}
+
+.table-player-profile3 {
+    border-left: 0;
+}
+
+.table-player-profile4 {
+    border-right: 0;
+}
+
+/*table tr td:last-child {
+    border-bottom: 0;
+}*/
+
+#largetext {
+    font-size: 45px;
 }
